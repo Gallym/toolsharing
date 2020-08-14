@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>SI - Toolsharing</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="https://kit.fontawesome.com/6c28f2efd4.js" crossorigin="anonymous"></script>
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body class="d-flex flex-column">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-primary" href="#" ><i class="fas fa-tools"></i> <b>Toolsharing</b></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul id="navbar" class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Reserve
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/account.html">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="page-content" class="bg-primary">
+    <div class="container text-light">
+      <div class="row" style="min-height: 5em; padding-top: 10%;">
+        <div class="col">
+          <h1>Tool Reservation</h1>
+          <p class="lead">This page has a list of all tools available for rental. Use the search below to find the one you need.</p>
+
+          <form id="toolSearch">
+            <div class="form-group">
+              <label>Search</label>
+              <input type="search" name="name" class="form-control form-control-lg" id="searchInput" placeholder="e.g &quot;Soldering iron&quot;,&quot;3D Printer&quot;...">
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <div class="row">
+        <div id='tools' class="col">
+
+<!--
+          <div id="" class="row bg-light shadow rounded text-body my-2 collapse.show">
+            <div class="col my-3">
+              <div class="row">
+                <div class="col">
+                  <h2><strong>3D Printer</strong> - Prusa i3 mk2</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p>
+                    This is a 3d printer. It can print things out of plastic. It's made by a cool Czech company, run by a dude called Josef Průša. It's probably the best hobbyist 3d printer in the world. Don't burn yourself.
+                  </p>
+                  <p class="text-secondary">
+                    Availabile | Rental price: 100kc/day | ID: 696970
+                  </p>
+                </div>
+                <div class="col-2 text-justify pr-5">
+                  <img src="img/3dprinter.png" class="img-thumbnail float-right" style="max-height: 128px; max-width: 128px;">
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col text-right pr-5">
+                  <button name="openReservation" type="button" class="btn btn-lg btn-primary" data-toggle="collapse" data-target="#reserve">Reserve</button>
+                  <input type="hidden" name="id" value="1">
+                </div>
+              </div >
+              <div name="reservationMenu" class="collapse">
+                <div class="row mt-4">
+                  <div class="col-12">
+                    <hr>
+                  </div>
+                </div>
+                <div class="row justify-content-end">
+                  <div class="col-8 text-center">
+                    <h3 name="selectTitle">Select Start Date</h3>
+                  </div>
+                  <div class="col-2 text-center">
+                    <button name="closeReservationMenu" class="btn btn-outline-primary"><i class="fas fa-times"></i></button>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-8 text-center" >
+                    <div name="dateList"  class="list-group">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center mt-5">
+                  <div class="col-3 text-center">
+                    <button name="confirmReservation" class="btn btn-primary">Confirm Reservation</button>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div name="alertPane" class="col-6">
+
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row align-items-center my-5">
+              <div class="col-6">
+                <h1 class="display-4 text-center text-primary">
+                  <i class="fas fa-tools"></i> <b>Toolsharing</b>
+                </h1>
+              </div>
+              <div class="col-6">
+                <div id="loginFailAlert" class="row justify-content-center collapse">
+                  <div class="alert alert-danger" role="alert">
+                    Incorrect username or password!
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <h1 class="text-center">Login</h1>
+                </div>
+                <div class="row justify-content-center">
+                  <form id="loginForm">
+                    <div class="form-group">
+                      <label for="email">Email address</label>
+                      <input type="email" class="form-control" id="email" name="username" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                    </div>
+                    <button id="login-button" type="submit" class="btn btn-primary">Submit</button>
+                    <button id="register-button" type="submit" class="btn btn-outline-primary">Register</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer id="sticky-footer" class="py-4 bg-light text-black-50">
+    <div class="container text-center">
+      <small>Copyright &copy; SI - Toolsharing team</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="js/vendor/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="js/api.js"></script>
+  <script src="js/api_user.js"></script>
+  <script src="js/api_reservation.js"></script>
+  <script src="js/api_tool.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/index.js"></script>
+
+
+
+</body>
+
+</html>

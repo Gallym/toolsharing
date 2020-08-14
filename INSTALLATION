@@ -1,0 +1,47 @@
+Requirments:
+My-Sql Database 8.0
+Java 8
+Maven 3.6.9
+apt-get
+systemctl
+nginx
+
+Default Database properties:
+url = jdbc:mysql://localhost:3306/database
+username = root
+password = 123456
+platform = mysql
+
+How to Run:
+
+Сreate your database, run create script from create.sql in DBscripts folder.
+
+------------------------ With script (recommended) --------------------------------------------------------
+
+Download zip: 
+
+Unzip install.zip
+
+Run install.sh
+
+------------------------ Manually -------------------------------------------------------------------------
+
+Alternatively, you can configure the server manually: (helps if you encounter errors)
+Move the fronted folder to /var/www
+
+Create an nginx config file to:
+Serve the /frontend folder statically from /var/www/frontend
+act as a reverse proxy for all /api routes to point to localhost:8080
+(an example configuration file with the above settings is in /frontend/nginx-config)
+
+If you are fine with default properties skip next step.
+
+If you want to change Database properties go to toolsharing/server/src/main/resourses/application.properties
+After changing database configuration you need to rebuild server in toolsharing/server/ with command:
+> mvn clean package
+
+Run the command from toolsharing folder:
+> java -jar ./server/target/toolsharing-0.0.1-SNAPSHOT.jar
+
+
+

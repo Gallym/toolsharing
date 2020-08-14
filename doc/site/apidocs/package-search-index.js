@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"cz.bisi1.toolsharing"},{"l":"cz.bisi1.toolsharing.controller"},{"l":"cz.bisi1.toolsharing.controller.dto"},{"l":"cz.bisi1.toolsharing.entity"},{"l":"cz.bisi1.toolsharing.repository"},{"l":"cz.bisi1.toolsharing.security"},{"l":"cz.bisi1.toolsharing.service"},{"l":"cz.bisi1.toolsharing.service.impl"}]

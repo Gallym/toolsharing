@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>SI - Toolsharing</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="https://kit.fontawesome.com/6c28f2efd4.js" crossorigin="anonymous"></script>
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body class="d-flex flex-column">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-primary" href="/index.html" ><i class="fas fa-tools"></i> <b>Toolsharing</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/index.html">Reserve
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Account</a>
+          <span class="sr-only">(current)</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about.html">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div id="page-content" class="bg-primary">
+  <div class="container text-light" style="margin-top: 10%;">
+    <div class="row mb-5">
+      <div class="col text-center">
+        <h1>My Account</h1>
+        <p class="lead">Modify your account details, view the details of your past rentals, and modify upcoming reserverations.</p>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <div class="row mb-2 text-center">
+          <div class="col">
+            <h2>My Reservations</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div id="reservationListContainer" class="col-10">
+            <!--<div class="row bg-light text-dark rounded shadow py-2 my-2 align-items-center">
+              <div class="col-10">
+                <strong>Screwdriver</strong> - from 10-12-2019 to 15-12-2019
+              </div>
+              <div class="col-2 text-right">
+                <button class="btn btn-outline-primary"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-4 bg-light rounded shadow text-dark py-3" id="userDetailsCard" style="min-height: 10em;">
+        <h2 class="text-center">Account Details</h2>
+        <hr>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row align-items-center my-5">
+            <div class="col-6">
+              <h1 class="display-4 text-center text-primary">
+                <i class="fas fa-tools"></i> <b>Toolsharing</b>
+              </h1>
+            </div>
+            <div class="col-6">
+              <div id="loginFailAlert" class="row justify-content-center collapse">
+                <div class="alert alert-danger" role="alert">
+                  Incorrect username or password!
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <h1 class="text-center">Login</h1>
+              </div>
+              <div class="row justify-content-center">
+                <form id="loginForm">
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="username" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                  </div>
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                  </div>
+                  <button id="login-button" type="submit" class="btn btn-primary">Submit</button>
+                  <button id="register-button" type="submit" class="btn btn-outline-primary">Register</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="sticky-footer" class="py-4 bg-light text-black-50">
+  <div class="container text-center">
+    <small>Copyright &copy; SI - Toolsharing team</small>
+  </div>
+</footer>
+
+<!-- Scripts -->
+
+<script src="js/vendor/modernizr-3.7.1.min.js"></script>
+<script src="js/vendor/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/api.js"></script>
+<script src="js/api_user.js"></script>
+<script src="js/api_reservation.js"></script>
+<script src="js/api_tool.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/common.js"></script>
+<script src="js/components.js"></script>
+<script src="js/account.js"></script>
+
+
+</body>
+
+</html>
